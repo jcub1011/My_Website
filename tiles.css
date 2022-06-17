@@ -1,6 +1,12 @@
 .tile {
     color: blue;
-    border-radius: 0px 10px 0px 10px;
     background-color: black;
-    padding: 20px;
+    padding: 20px 50px;
+    min-height: 60px;
+    clip-path: polygon(0% 0%, 
+                       calc(100% - 30px) 0%, 
+                       100% calc(0% + 30px), 
+                       100% 100%, 
+                       calc(0% + 30px) 100%, 
+                       0% calc(100% - 30px));
 }
