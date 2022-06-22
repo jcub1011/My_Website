@@ -1,12 +1,40 @@
 .tile {
+    min-height: 60px;
     color: blue;
     background-color: black;
-    padding: 20px 50px;
-    min-height: 60px;
     clip-path: polygon(0% 0%, 
                        calc(100% - 30px) 0%, 
                        100% calc(0% + 30px), 
                        100% 100%, 
                        calc(0% + 30px) 100%, 
                        0% calc(100% - 30px));
+}
+
+.tile-wrap {
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
+}
+
+.tile h1 {
+    color: orange;
+    font-size: xxx-large;
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.tile hr {
+    box-shadow: 0px 3px 3px rgb(240, 248, 255);
+    background-color: none;
+    height: 3px;
+    border: none;
+}
+
+.tile p {
+    font-size: medium;
+    margin-top: 20px;
+}
+
+.tile a {
+    text-decoration: none;
+    color: yellow;
 }
