@@ -3,7 +3,11 @@
 }
 
 body {
-    background-color: blue;
+    background-color: #0D1321;
+    font-family: 'Ubuntu Mono', monospace;
+    color: #F0EBD8;
+    line-height: 90%;
+    font-size: 15px;
 }
 
 .program-button-tray {
@@ -32,8 +36,6 @@ body {
 }
 
 .terminal-body {
-    font-size: 15px;
-    font-family: 'Ubuntu Mono', monospace;
     padding: 0px;
     overflow: auto;
 }
