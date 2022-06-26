@@ -1,3 +1,4 @@
+/*
 document.body.onload = launchApp('terminal');
 
 function createTray(name){
@@ -31,7 +32,7 @@ function createTray(name){
 }
 
 function makeDraggable(app) {
-    
+
 }
 
 function initalizeTerminal() {
@@ -62,4 +63,5 @@ function launchApp(application) {
             initalizeTerminal();
         }
     }
-}
+}*/
+
