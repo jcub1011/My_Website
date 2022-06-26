@@ -1,15 +1,4 @@
 document.body.onload = startTypeOuts();
-/*
-function typeOutLoop(elmToType, textToInsert, index = 0) {
-    if (index < textToInsert.length) {
-        elmToType.innerHTML += textToInsert[index];
-        setTimeout(function() {
-            typeOutLoop(elmToType, textToInsert, index + 1)
-        }, 1);
-    } else {
-        console.log("finished");
-    }
-}*/
 
 /**
  * Loop to make text appear char after char.
