@@ -10,6 +10,10 @@ body {
     font-size: 15px;
 }
 
+.type-out {
+    display: none;
+}
+
 .program-button-tray {
     height: var(--terminal-head-height);
     background-color: white;
