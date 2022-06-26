@@ -1,0 +1,46 @@
+:root {
+    --terminal-head-height: 24px;
+}
+
+body {
+    background-color: #0D1321;
+    font-family: 'Ubuntu Mono', monospace;
+    color: #F0EBD8;
+    line-height: 90%;
+    font-size: 15px;
+}
+
+.program-button-tray {
+    height: var(--terminal-head-height);
+    background-color: white;
+    color: black;
+    text-align: right;
+    font-size: 14px;
+    font-family: segoe ui;
+}
+
+.tray-buttons {
+    height: var(--terminal-head-height);
+    width: 50px;
+    border: none;
+    font-family: consolas;
+}
+
+.terminal-window {
+    color: white;
+    background-color: black;
+    resize: both;
+    min-height: 100px;
+    min-width: 285px;
+    position: absolute;
+}
+
+.terminal-body {
+    padding: 0px;
+    overflow: auto;
+}
+
+.terminal-body p {
+    padding: 2px;
+
+}
