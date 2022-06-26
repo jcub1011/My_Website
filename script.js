@@ -1,38 +1,37 @@
-document.body.onload = displayNameHeader();
-
-function drawText(objToDrawIn) {
-    console.log("Drawing text");
-    console.log(objToDrawIn);
-    const speed = 10; // Time in ms between each char.
-    const textToDraw = objToDrawIn.innerHTML;
-
-    objToDrawIn.innerHTML = null;
-    console.log(textToDraw);
-}
-
-function displayNameHeader() {
-    // Generates the header.
-    console.log("Generating header");
-    const head = document.createElement("div");
-    head.className = "header px-4 py-1";
-    head.setAttribute("id", "header");
-
-    const fName = document.createElement("pre");
-    fName.style.color = "#E7F9A9";
-    fName.innerHTML = `
+const text = [`
   _____             ____     ____     ____\n\
  /__ __/   /\\      / ___\\   / __ \\   |  __ \\\n\
    | |    /  \\    / /      / /  \\ \\  | | / /\n\
    | |   / /\\ \\  | |      | |    | | | |{ {\n\
  __/ /  / ____ \\  \\ \\____  \\ \\__/ /  | |_\\ \\\n\
-/___/  /_/    \\_\\  \\____/   \\____/   |_____/`;
+/___/  /_/    \\_\\  \\____/   \\____/   |_____/\n\n\
+McCormack`];
 
-    const lName = document.createElement("p");
-    lName.innerHTML = "McCormack";
-    head.appendChild(fName);
-    head.appendChild(lName);
+document.body.onload = typeOutText("nameHead", text[0]);
+
+function typeOutText(elementToPutTextIn, textToInsert) {
+    console.log("Setting up type out.");
+    const interval = 1; // Time between char in ms.
+
+    const element = document.getElementById(elementToPutTextIn);
     
-    document.body.appendChild(head);
+    const textContainer = document.createElement('pre');
+    element.appendChild(textContainer);
 
-    drawText(document.querySelector("#header").fName);
+    console.log("Initializing call loop.");
+    textInsertCallLoop(elementToPutTextIn, textToInsert, interval, 0);
+}
+
+function textInsertCallLoop(elementToPutTextIn, textToInsert, interval, index) {
+    const element = document.getElementById(elementToPutTextIn).querySelector("pre");
+
+    if (index < textToInsert.length) {
+        element.innerHTML += textToInsert[index];
+
+        setTimeout(function() {
+            textInsertCallLoop(elementToPutTextIn, textToInsert, interval, index += 1)
+        }, interval);
+    } else {
+        console.log("Finished.");
+    }
 }
