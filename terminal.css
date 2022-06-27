@@ -2,12 +2,17 @@
     --terminal-head-height: 24px;
 }
 
+.center {
+    margin: auto;
+}
+
 body {
     background-color: #0D1321;
     font-family: 'Ubuntu Mono', monospace;
     color: #F0EBD8;
     line-height: 90%;
     font-size: 15px;
+    min-width: 360px;
 }
 
 .type-out {

@@ -38,6 +38,6 @@ function startTypeOut() {
     const elms = document.getElementsByClassName("type-out");
     
     if (elms != null) {
-        typeOutLoop(elms, 0, 3);
+        typeOutLoop(elms, 0, 20);
     }
 }
