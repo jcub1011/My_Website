@@ -9,29 +9,34 @@ document.body.onload = startTypeOut();
 function typeOutLoop(elms, elmIndex, speed) {
     console.log(elms);
     const elm = elms[elmIndex];
-    console.log(elm);
-    const text = elm.innerHTML;
-    console.log(text);
-    elm.innerHTML = null;
-    elm.style.display = 'inline';
     elmIndex += 1;
+    if (elm.style.visibility == 'hidden') {
+        console.log("skipped element");
+        typeOutLoop(elms, elmIndex, speed);
+    } else {
+        console.log(elm);
+        const text = elm.innerHTML;
+        console.log(text);
+        elm.innerHTML = null;
+        elm.style.display = 'inline';
 
-    let index = 0;
-    let interval = setInterval(function() {
-        for (i = 0; i < speed; i++) {
-            if (index < text.length) {
-                elm.innerHTML += text[index];
-                index += 1;
-            } else {
-                clearInterval(interval);
-                console.log("Finished.");
-                if (elmIndex < elms.length) {
-                    typeOutLoop(elms, elmIndex, speed);
+        let index = 0;
+        let interval = setInterval(function() {
+            for (i = 0; i < speed; i++) {
+                if (index < text.length) {
+                    elm.innerHTML += text[index];
+                    index += 1;
+                } else {
+                    clearInterval(interval);
+                    console.log("Finished.");
+                    if (elmIndex < elms.length) {
+                        typeOutLoop(elms, elmIndex, speed);
+                    }
+                    break;
                 }
-                break;
             }
-        }
-    }, 15);
+        }, 15);
+    }
 }
 
 function startTypeOut() {
