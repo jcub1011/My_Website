@@ -1,5 +1,9 @@
 document.body.onload = startTypeOut();
 
+function checkIfInvisible(elm) {
+    return elm.offsetWidth > 0 || elm.offsetHeight > 0;
+}
+
 /**
  * 
  * @param {getElementsByClassName} elms List of elements to type text for.
@@ -7,18 +11,17 @@ document.body.onload = startTypeOut();
  * @param {Integer} speed The amount of chars to print per loop.
  */
 function typeOutLoop(elms, elmIndex, speed) {
-    console.log(elms);
-    const elm = elms[elmIndex];
-    elmIndex += 1;
-    if (elm.style.visibility == 'hidden') {
-        console.log("skipped element");
-        typeOutLoop(elms, elmIndex, speed);
+    if (elmIndex >= elms.length) {
+        console.log("Drawn all elements.");
     } else {
+        console.log(elms);
+        const elm = elms[elmIndex];
         console.log(elm);
         const text = elm.innerHTML;
         console.log(text);
         elm.innerHTML = null;
         elm.style.display = 'inline';
+        elmIndex += 1;
 
         let index = 0;
         let interval = setInterval(function() {
@@ -39,10 +42,26 @@ function typeOutLoop(elms, elmIndex, speed) {
     }
 }
 
+function typeOut() {
+    
+}
+
 function startTypeOut() {
     const elms = document.getElementsByClassName("type-out");
     
     if (elms != null) {
-        typeOutLoop(elms, 0, 20);
+        let visibleElems = [];
+        let invisibleElems = [];
+
+        for (const elm in elms) {
+            if ($(elm).is(":visible")) {
+                console.log("Inivisible element.");
+                invisibleElems.push(elm);
+            } else {
+                console.log("Visible element.");
+                visibleElems.push(elm);
+            }
+        }
+        typeOutLoop(elms, 0, 5);
     }
 }
